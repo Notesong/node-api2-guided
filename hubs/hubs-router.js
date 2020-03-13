@@ -11,9 +11,7 @@ router.get('/', (req, res) => {
     .catch(error => {
       // log error to database
       console.log(error);
-      res.status(500).json({
-        message: 'Error retrieving the hubs',
-      });
+      res.status(500).json({ message: 'Error retrieving the hubs' });
     });
   });
   
@@ -23,17 +21,13 @@ router.get('/:id/messages', (req, res) => {
             if (messages.length > 0) {
                 res.status(200).json(messages);
             } else {
-                res
-                    .status(404)
-                    .json({ message: 'There are no messages in this hub.'});
+                res.status(404).json({ message: 'There are no messages in this hub.'});
             }
         })
         .catch(error => {
             // log error to database
             console.log(error);
-            res
-                .status(500)
-                .json({ message: 'Error retrieving the hub' });
+            res.status(500).json({ message: 'Error retrieving the hub' });
         });
 });
 
@@ -49,9 +43,7 @@ router.get('/:id', (req, res) => {
         .catch(error => {
             // log error to database
             console.log(error);
-            res.status(500).json({
-            message: 'Error retrieving the hub',
-            });
+            res.status(500).json({ message: 'Error retrieving the hub' });
         });
 });
 
@@ -63,9 +55,7 @@ router.post('/', (req, res) => {
     .catch(error => {
         // log error to database
         console.log(error);
-        res.status(500).json({
-        message: 'Error adding the hub',
-        });
+        res.status(500).json({ message: 'Error adding the hub' });
     });
 });
 
@@ -81,9 +71,7 @@ router.delete('/:id', (req, res) => {
     .catch(error => {
         // log error to database
         console.log(error);
-        res.status(500).json({
-        message: 'Error removing the hub',
-        });
+        res.status(500).json({ message: 'Error removing the hub' });
     });
 });
 
@@ -100,9 +88,7 @@ router.put('/:id', (req, res) => {
     .catch(error => {
         // log error to database
         console.log(error);
-        res.status(500).json({
-        message: 'Error updating the hub',
-        });
+        res.status(500).json({ message: 'Error updating the hub' });
     });
 });
 
